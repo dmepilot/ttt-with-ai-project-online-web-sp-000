@@ -30,13 +30,14 @@ elsif player_count == "1"
     puts "Would you like to play again?(Y/N)?"
     again = gets.strip.upcase
   elsif player_count == "wargames"
-    binding.pry
+
     counter = 0
     cats_games =0
     player_1_wins=0
     player_2_wins=0
       until counter == 100
         Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
+        binding.pry
         #  if draw? then cats_games +=1
         #  end
         counter += 1
