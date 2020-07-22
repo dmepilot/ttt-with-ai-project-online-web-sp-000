@@ -49,9 +49,9 @@ module Players
      def for_the_win(board)
         WIN_COMBINATIONS.find do |combo|
           #binding.pry
-        if (board.cells[combo[0]] == self.token && board.cells[combo[1]] == self.token) && board.cells[combo[2]]== " ") then return combo[2]
-        elsif (board.cells[combo[1]] == self.token && board.cells[combo[2]] == self.token) && board.cells[combo[0]]== " ") then return combo[0]
-        elsif (board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token) && board.cells[combo[1]]== " ") then return combo[1]
+        if (board.cells[combo[0]] == self.token && board.cells[combo[1]] == self.token) && board.cells[combo[2]]== " " then return combo[2]
+        elsif (board.cells[combo[1]] == self.token && board.cells[combo[2]] == self.token) && board.cells[combo[0]]== " " then return combo[0]
+        elsif (board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token) && board.cells[combo[1]]== " " then return combo[1]
          end
         end
       end
