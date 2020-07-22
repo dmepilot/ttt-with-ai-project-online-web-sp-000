@@ -20,7 +20,7 @@ module Players
           (for_the_win(board)+1).to_s
       elsif two_of_three(board)
       (two_of_three(board)+1).to_s
-      elsif !board.taken?(5)
+    elsif !board.taken?(5) && corner_moves.all?{|p| !board.taken?(p)}
         "5"
       elsif corner_moves.find{|p| board.cells[p.to_i-1] == " "}
         corner_moves.find{|p| board.cells[p.to_i-1] == " "}
