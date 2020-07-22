@@ -40,6 +40,6 @@ elsif player_count == "1"
           end
         counter += 1
       end
-      puts "Cat's Games = #{cats_games}"
+      #puts "Cat's Games = #{cats_games}"
   end
-#end
+end
