@@ -12,6 +12,7 @@ module Players
       [2,4,6], # diagonal 2
       ]
 
+      # 7-3-9 can still win
     def move(board)
       valid_moves = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
       corner_moves = ["1", "3", "7", "9"]
