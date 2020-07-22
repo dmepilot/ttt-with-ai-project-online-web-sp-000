@@ -36,7 +36,7 @@ elsif player_count == "1"
     player_2_wins=0
       until counter == 100
         Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
-          if Game.draw? then cats_games +=1
+          if draw? then cats_games +=1
           end
         counter += 1
       end
