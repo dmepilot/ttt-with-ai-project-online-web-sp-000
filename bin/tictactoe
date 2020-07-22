@@ -29,5 +29,10 @@ elsif player_count == "1"
     Game.new.play
     puts "Would you like to play again?(Y/N)?"
     again = gets.strip.upcase
+  elsif player_count == "wargames"
+    counter = 0
+    until counter == 100
+      Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
+      counter += 1
   end
 end
