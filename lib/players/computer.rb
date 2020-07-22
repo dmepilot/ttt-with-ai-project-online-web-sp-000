@@ -18,7 +18,9 @@ module Players
       move=""
       binding.pry
       #use self.token to prioritize win over block
-    if two_of_three(board)
+      if for_the_win(board) 
+
+      elsif two_of_three(board)
       (two_of_three(board)+1).to_s
 
       elsif !board.taken?(5)
@@ -62,3 +64,4 @@ module Players
 
   end
 end
+
