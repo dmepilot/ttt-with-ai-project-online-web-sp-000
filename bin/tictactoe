@@ -10,6 +10,7 @@ puts "Would you like a 0, 1, or 2 player game?"
 
 if player_count == "0"
   Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
+  binding.pry
     puts "Would you like to play again?(Y/N)?"
     again = gets.strip.upcase
 elsif player_count == "1"
@@ -37,7 +38,6 @@ elsif player_count == "1"
     player_2_wins=0
       until counter == 100
         Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
-        binding.pry
         #  if draw? then cats_games +=1
         #  end
         counter += 1
