@@ -32,7 +32,6 @@ module Players
 
 
     def two_of_three(board)
-
        WIN_COMBINATIONS.find do |combo|
          #binding.pry
        if (board.taken?(combo[0]+1) && (board.cells[combo[0]] == board.cells[combo[1]]) && board.cells[combo[2]]== " ") then return combo[2]
@@ -42,5 +41,24 @@ module Players
         end
        end
      end
+
+
+
+     def for_the_win(board)
+        WIN_COMBINATIONS.find do |combo|
+          #binding.pry
+        if (board.cells[combo[0]] == self.token && board.cells[combo[1]] == self.token) && board.cells[combo[2]]== " ") then return combo[2]
+        elsif (board.cells[combo[1]] == self.token && board.cells[combo[2]] == self.token) && board.cells[combo[0]]== " ") then return combo[0]
+        elsif (board.cells[combo[0]] == self.token && board.cells[combo[2]] == self.token) && board.cells[combo[1]]== " ") then return combo[1]
+        else
+         end
+        end
+      end
+
+
+
+
+
+     
   end
 end
