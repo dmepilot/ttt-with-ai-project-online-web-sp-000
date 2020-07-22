@@ -16,7 +16,7 @@ module Players
       valid_moves = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
       corner_moves = ["1", "3", "7", "9"]
       move=""
-      binding.pry
+    #  binding.pry
       #use self.token to prioritize win over block
       if for_the_win(board)
           (for_the_win(board)+1).to_s
