@@ -9,8 +9,7 @@ puts "Would you like a 0, 1, or 2 player game?"
     player_count = gets.strip
 
 if player_count == "0"
-  Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
-  binding.pry
+  Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play 
     puts "Would you like to play again?(Y/N)?"
     again = gets.strip.upcase
 elsif player_count == "1"
