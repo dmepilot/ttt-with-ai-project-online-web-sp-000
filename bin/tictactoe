@@ -34,5 +34,6 @@ elsif player_count == "1"
     until counter == 100
       Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
       counter += 1
+    end
   end
 end
