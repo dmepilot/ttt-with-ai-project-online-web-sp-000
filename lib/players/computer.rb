@@ -35,7 +35,6 @@ module Players
        if (board.taken?(combo[0]+1) && (board.cells[combo[0]] == board.cells[combo[1]]) && board.cells[combo[2]]== " ") then combo[2]
        elsif (board.taken?(combo[1]+1) && (board.cells[combo[1]] == board.cells[combo[2]]) && board.cells[combo[0]]== " ") then combo[0]
        elsif (board.taken?(combo[0]+1) && (board.cells[combo[0]] == board.cells[combo[2]]) && board.cells[combo[1]]== " ") then combo[1]
-       else
         end
        end
      end
