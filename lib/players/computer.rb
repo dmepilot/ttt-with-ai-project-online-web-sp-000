@@ -1,9 +1,46 @@
 module Players
   class Computer < Player
 
+    WIN_COMBINATIONS = [
+      [0,1,2], #top row
+      [3,4,5], #middle row
+      [6,7,8], #bottom row
+      [0,3,6], #left column
+      [1,4,7], #middle column
+      [2,5,8], #right column
+      [0,4,8], #diagonal 1
+      [2,4,6], # diagonal 2
+      ]
+
     def move(board)
       valid_moves = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-      valid_moves.sample
+      corner_moves = ["1", "3", "7", "9"]
+      move=""
+      binding.pry
+      #use self.token to prioritize win over block
+    if two_of_three(board)
+      (two_of_three(board)+1).to_s
+
+      elsif !board.taken?(5)
+        "5"
+      elsif corner_moves.find{|p| board.cells[p.to_i-1] == " "}
+        corner_moves.find{|p| board.cells[p.to_i-1] == " "}
+      else
+        valid_moves.sample
+      end
     end
+
+
+    def two_of_three(board)
+
+       WIN_COMBINATIONS.find do |combo|
+         #binding.pry
+       if (board.taken?(combo[0]+1) && (board.cells[combo[0]] == board.cells[combo[1]]) && board.cells[combo[2]]== " ") then return combo[2]
+       elsif (board.taken?(combo[1]+1) && (board.cells[combo[1]] == board.cells[combo[2]]) && board.cells[combo[0]]== " ") then return combo[0]
+       elsif (board.taken?(combo[0]+1) && (board.cells[combo[0]] == board.cells[combo[2]]) && board.cells[combo[1]]== " ") then return combo[1]
+       else
+        end
+       end
+     end
   end
 end

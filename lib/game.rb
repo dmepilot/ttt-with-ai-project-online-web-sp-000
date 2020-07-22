@@ -17,6 +17,7 @@ WIN_COMBINATIONS = [
     @board = board
     @player_1=player_1
     @player_2=player_2
+    board.display
   end
 
   def current_player
@@ -53,12 +54,14 @@ WIN_COMBINATIONS = [
   end
 
   def turn
+    #board.display
     choice=0
-     while choice.to_i < 1 || choice.to_i > 9
+     while !board.valid_move?(choice)
        choice=current_player.move(board)
      end
      choice
      board.update(choice.to_i, current_player)
+     board.display
   end
 
   def play
@@ -71,5 +74,6 @@ WIN_COMBINATIONS = [
       puts "Cat's Game!"
     end
   end
+
 
 end

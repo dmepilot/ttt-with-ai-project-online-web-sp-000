@@ -11,11 +11,13 @@ class Board
   end
 
   def display
+    puts ""
     puts " #{cells[0]} | #{cells[1]} | #{cells[2]} "
     puts " -----------"
     puts " #{cells[3]} | #{cells[4]} | #{cells[5]} "
     puts " -----------"
     puts " #{cells[6]} | #{cells[7]} | #{cells[8]} "
+    puts ""
   end
 
   def position(choice)
@@ -36,7 +38,7 @@ class Board
     counter
   end
 
-  def taken?(position)
+  def taken?(position) #takes in postion converts to index
     cells[position.to_i-1] == "X" || cells[position.to_i-1] == "O"
   end
 
